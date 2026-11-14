@@ -1,12 +1,8 @@
 package ucb.estudo.escolamusica;
 
-/**
- *
- * @author ...
- */
 public class ViolaoExercicio extends InstrumentoMusical {
 
-    private int numeroCordas;
+    private final int numeroCordas;
 
     public ViolaoExercicio(String nome, String material, int numeroCordas) {
         super(nome, material);
@@ -16,12 +12,22 @@ public class ViolaoExercicio extends InstrumentoMusical {
     @Override
     public void tocar() {
         System.out.println("Tocando notas suaves no " + nome + " com " + numeroCordas + " cordas...");
-        System.out.println(" Dedilhando uma melodia romântica ");
+        System.out.println("Dedilhando uma melodia romântica");
     }
 
     @Override
     public void afinar() {
         super.afinar();
         System.out.println("Ajustando a tensão das " + numeroCordas + " cordas.");
+    }
+
+    @Override
+    public void mostrarInformacoes() {
+        super.mostrarInformacoes();
+        System.out.println("Número de cordas: " + numeroCordas);
+    }
+
+    public int getNumeroCordas() {
+        return numeroCordas;
     }
 }
