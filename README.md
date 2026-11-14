@@ -1,30 +1,26 @@
 # Escola de Música
 
-Projeto em **Java 21** com **Maven** para gerenciamento de uma escola de música.
+Exercício de **Programação Orientada a Objetos** em **Java 21**: uma escola de música monta uma banda com instrumentos diferentes e faz uma apresentação. O foco é herança, classe abstrata e polimorfismo.
 
-## Tecnologias
+## Classes
 
-- Java 21
-- Maven
+| Classe | Papel |
+|--------|-------|
+| `InstrumentoMusical` | Classe abstrata com `nome`, `material`, `afinar()`, `mostrarInformacoes()` e o método abstrato `tocar()` |
+| `ViolaoExercicio` | Violão, com número de cordas |
+| `PianoExercicio` | Piano, com número de teclas |
+| `BateriaExercicio` | Bateria, com número de peças |
+| `EscolaDeMusica` | Classe principal: cria a banda e chama `apresentar()` |
 
-## Estrutura
-
-```
-Musica/
-└── EscolaDeMusica/
-    ├── pom.xml
-    └── src/main/java/
-```
-
-A classe principal configurada no `pom.xml` é `com.mycompany.escolademusica.EscolaDeMusica`.
+Cada instrumento sobrescreve `tocar()` e `afinar()` do seu jeito. `apresentar()` trata todos como `InstrumentoMusical`, e o Java escolhe a implementação certa em tempo de execução.
 
 ## Como executar
 
-Pré-requisitos: JDK 21 e Maven instalados.
+Pré-requisitos: JDK 21 e Maven.
 
 ```bash
 cd EscolaDeMusica
-mvn compile exec:java -Dexec.mainClass=com.mycompany.escolademusica.EscolaDeMusica
+mvn compile exec:java
 ```
 
 ## Autor
